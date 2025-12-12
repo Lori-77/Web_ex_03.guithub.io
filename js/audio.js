@@ -55,7 +55,7 @@ function initMusic() {
     
     // 当音乐的元数据完成加载时触发下面这个函数：
     audio.onloadedmetadata = function() {
-        recordImg.style.backgroundImage = `url('../img/record${musicId}.jpg')`;
+        recordImg.style.backgroundImage = `url('./img/record${musicId}.jpg')`;
         body.style.backgroundImage = `url('./img/bg${musicId}.png')`; 
         musicTitle.innerText = musicData[musicId][0];
         authorName.innerText = musicData[musicId][1];
@@ -153,7 +153,7 @@ playMode.addEventListener('click', function() {
     if (modeID > 3) {
         modeID = 1;
     }
-    playMode.style.backgroundImage = `url('../img/mode${modeID}.png')`;
+    playMode.style.backgroundImage = `url('./img/mode${modeID}.png')`;
 });
 
 // 当音乐播放完
@@ -205,9 +205,9 @@ function updateVolume() {
 // 更新音量图标的函数
 function updateVolumnIcon() {
     if (audio.muted || audio.volume == 0) {
-        volume.style.backgroundImage = `url('../img/静音.png')`;
+        volume.style.backgroundImage = `url('./img/mute.png')`;
     } else {
-        volume.style.backgroundImage = `url('../img/音量.png')`;
+        volume.style.backgroundImage = `url('./img/volume.png')`;
     }
 }
 
@@ -260,4 +260,5 @@ function createMusic() {
 
 
 document.addEventListener('DOMContentLoaded', createMusic);
+
 
